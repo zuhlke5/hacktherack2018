@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c8A-UP-qCz">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="yhk-76-qG6">
+            <objects>
+                <navigationController id="c8A-UP-qCz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="oa7-ms-i7I">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7IO-DG-3ek" kind="relationship" relationship="rootViewController" id="miK-f3-uOW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aUV-Qd-uS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-598" y="303"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="FeV-7I-Pdp">
+            <objects>
+                <viewController id="7IO-DG-3ek" customClass="SearchViewController" customModule="Hack_The_Rack_Z5" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3jS-CQ-Zc6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Speak or type something..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUf-ue-MVZ">
+                                <rect key="frame" x="16" y="263.5" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecd-O0-dN5">
+                                <rect key="frame" x="16" y="309.5" width="343" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <segue destination="5pp-BL-J30" kind="show" id="eug-MB-PWW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ecd-O0-dN5" firstAttribute="leading" secondItem="zUf-ue-MVZ" secondAttribute="leading" id="1Cz-qW-cTI"/>
+                            <constraint firstItem="ecd-O0-dN5" firstAttribute="trailing" secondItem="zUf-ue-MVZ" secondAttribute="trailing" id="2lt-wM-efC"/>
+                            <constraint firstItem="zUf-ue-MVZ" firstAttribute="bottom" secondItem="hrS-AC-JhF" secondAttribute="centerY" constant="-8" id="7Ds-wW-Dtm"/>
+                            <constraint firstItem="ecd-O0-dN5" firstAttribute="top" secondItem="zUf-ue-MVZ" secondAttribute="bottom" constant="16" id="Z8G-n9-bXt"/>
+                            <constraint firstItem="zUf-ue-MVZ" firstAttribute="leading" secondItem="hrS-AC-JhF" secondAttribute="leading" constant="16" id="hsd-mW-xjA"/>
+                            <constraint firstItem="hrS-AC-JhF" firstAttribute="trailing" secondItem="zUf-ue-MVZ" secondAttribute="trailing" constant="16" id="lxD-8A-j1E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hrS-AC-JhF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9hA-vH-kBt"/>
+                    <connections>
+                        <outlet property="searchingTextField" destination="zUf-ue-MVZ" id="EE1-K7-rpm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPU-Hu-0Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="207" y="303"/>
+        </scene>
+        <!--Mood Board View Controller-->
+        <scene sceneID="rH1-69-yjq">
+            <objects>
+                <collectionViewController id="5pp-BL-J30" customClass="MoodBoardViewController" customModule="Hack_The_Rack_Z5" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="FRs-2y-8hj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewLayout key="collectionViewLayout" id="4oN-jo-nup" customClass="MoodBoardLayout" customModule="Hack_The_Rack_Z5" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="Text" id="UCv-Lg-vOT" customClass="MoodBoardTextCell" customModule="Hack_The_Rack_Z5" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="5pp-BL-J30" id="acC-cD-C2l"/>
+                            <outlet property="delegate" destination="5pp-BL-J30" id="qOr-We-MoU"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WTL-va-5Rb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050" y="303"/>
+        </scene>
+    </scenes>
+</document>
