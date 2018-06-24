@@ -47,6 +47,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecd-O0-dN5">
                                 <rect key="frame" x="16" y="309.5" width="343" height="30"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <segue destination="5pp-BL-J30" kind="show" id="eug-MB-PWW"/>
@@ -54,7 +55,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ecd-O0-dN5" firstAttribute="leading" secondItem="zUf-ue-MVZ" secondAttribute="leading" id="1Cz-qW-cTI"/>
                             <constraint firstItem="ecd-O0-dN5" firstAttribute="trailing" secondItem="zUf-ue-MVZ" secondAttribute="trailing" id="2lt-wM-efC"/>

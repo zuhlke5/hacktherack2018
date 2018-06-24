@@ -53,11 +53,13 @@ extension Array where Element == SearchedImage {
 //        )
 //        return data
 
+        var sorted = self.sorted(by: { $0.relevance(with: tags) > $1.relevance(with: tags) })
+
         guard let primaryImage = self.first?.makeMoodBoardImageItem() else {
             return nil
         }
 
-        let dimensions: [MoodBoardData.ImageItem] = self[1..<self.count].map { $0.makeMoodBoardImageItem() }
+        let dimensions: [MoodBoardData.ImageItem] = sorted[1..<self.count].map { $0.makeMoodBoardImageItem() }
         let data = MoodBoardData(
             primaryImage: primaryImage,
             dimensions: [dimensions]
