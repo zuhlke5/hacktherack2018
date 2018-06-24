@@ -8,4 +8,8 @@ class MoodBoardPresenter: MoodBoardPresenterProtocol {
         self.view?.present(data: response)
     }
 
+    func handleFailure() {
+        self.view?.presentFailure()
+    }
+
 }

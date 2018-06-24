@@ -20,6 +20,7 @@
 		9FD7B27520DF59E7001F39B9 /* CHTCollectionViewWaterfallLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7B27120DF59D1001F39B9 /* CHTCollectionViewWaterfallLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FD7B27620DF59E7001F39B9 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7B27020DF59D1001F39B9 /* Kingfisher.framework */; };
 		9FD7B27720DF59E7001F39B9 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7B27020DF59D1001F39B9 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FD7B27B20DF5D13001F39B9 /* ImageAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7B27A20DF5D13001F39B9 /* ImageAPIWorker.swift */; };
 		9FE97F8420DEC8B9009B2B9E /* MoodBoardTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE97F8320DEC8B9009B2B9E /* MoodBoardTextCell.swift */; };
 		9FE97F8F20DEC966009B2B9E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE97F8E20DEC966009B2B9E /* SearchViewController.swift */; };
 		9FE97F9120DEC977009B2B9E /* MoodBoardImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE97F9020DEC977009B2B9E /* MoodBoardImageCell.swift */; };
@@ -54,6 +55,7 @@
 		9F51FD7F20DDFC290088919C /* MoodBoardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardProtocols.swift; sourceTree = "<group>"; };
 		9FD7B27020DF59D1001F39B9 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = SOURCE_ROOT; };
 		9FD7B27120DF59D1001F39B9 /* CHTCollectionViewWaterfallLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CHTCollectionViewWaterfallLayout.framework; path = Carthage/Build/iOS/CHTCollectionViewWaterfallLayout.framework; sourceTree = SOURCE_ROOT; };
+		9FD7B27A20DF5D13001F39B9 /* ImageAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIWorker.swift; sourceTree = "<group>"; };
 		9FE97F8320DEC8B9009B2B9E /* MoodBoardTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardTextCell.swift; sourceTree = "<group>"; };
 		9FE97F8E20DEC966009B2B9E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9FE97F9020DEC977009B2B9E /* MoodBoardImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardImageCell.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		9F51FD5B20DDE83A0088919C /* Hack The Rack Z5 */ = {
 			isa = PBXGroup;
 			children = (
+				9FD7B27920DF5CFC001F39B9 /* API */,
 				9F51FD6820DDE83B0088919C /* Info.plist */,
 				9F51FD5C20DDE83A0088919C /* AppDelegate.swift */,
 				9F51FD6320DDE83B0088919C /* Assets.xcassets */,
@@ -132,6 +135,14 @@
 				9FD7B27020DF59D1001F39B9 /* Kingfisher.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		9FD7B27920DF5CFC001F39B9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9FD7B27A20DF5D13001F39B9 /* ImageAPIWorker.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		9FE97F8C20DEC966009B2B9E /* Search */ = {
@@ -228,6 +239,7 @@
 				9F51FD8020DDFC290088919C /* MoodBoardProtocols.swift in Sources */,
 				9F51FD5D20DDE83A0088919C /* AppDelegate.swift in Sources */,
 				9F51FD7D20DDFBF70088919C /* MoodBoardPresenter.swift in Sources */,
+				9FD7B27B20DF5D13001F39B9 /* ImageAPIWorker.swift in Sources */,
 				9FE97F8420DEC8B9009B2B9E /* MoodBoardTextCell.swift in Sources */,
 				9FE97F9120DEC977009B2B9E /* MoodBoardImageCell.swift in Sources */,
 				9F51FD7B20DDFBE10088919C /* MoodBoardInteractor.swift in Sources */,

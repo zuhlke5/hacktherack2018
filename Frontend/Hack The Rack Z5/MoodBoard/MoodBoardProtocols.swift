@@ -6,6 +6,8 @@ protocol MoodBoardViewProtocol: class {
 
     func present(data: MoodBoardData)
 
+    func presentFailure()
+
 }
 
 protocol MoodBoardInteractorProtocol: class {
@@ -14,7 +16,7 @@ protocol MoodBoardInteractorProtocol: class {
 
     func searchWithTerms(_ terms: String)
 
-    func searchWithImageId(_ imageId: String)
+    func searchWithTags(_ tags: [String])
 
 }
 
@@ -23,6 +25,8 @@ protocol MoodBoardPresenterProtocol: class {
     var view: MoodBoardViewProtocol? { get set }
 
     func handleResponse(_ response: MoodBoardData)
+
+    func handleFailure()
 
 }
 
@@ -33,6 +37,8 @@ struct MoodBoardData: Codable {
         var imageId: String
 
         var imageURL: String
+
+        var tags: [String]
 
     }
 

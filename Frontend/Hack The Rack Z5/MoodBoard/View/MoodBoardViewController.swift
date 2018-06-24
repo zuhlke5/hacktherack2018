@@ -1,11 +1,3 @@
-//
-//  MoodBoardViewController.swift
-//  Hack The Rack Z5
-//
-//  Created by Kevin Lo on 23/6/2018.
-//  Copyright © 2018 Zuhlke. All rights reserved.
-//
-
 import UIKit
 
 class MoodBoardViewController: UICollectionViewController, MoodBoardViewProtocol {
@@ -14,14 +6,33 @@ class MoodBoardViewController: UICollectionViewController, MoodBoardViewProtocol
 
     func present(data: MoodBoardData) {
         self.data = data
+        self.stopLoading()
+    }
+
+    func presentFailure() {
+        self.stopLoading()
     }
 
     // MARK: Internal Implementation
 
-    var data: MoodBoardData? {
+    private var data: MoodBoardData? {
         didSet {
-            self.collectionView?.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView?.reloadData()
+            }
         }
+    }
+
+    private let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+
+    private func startLoading() {
+        self.view.isUserInteractionEnabled = false
+        self.spinner.startAnimating()
+    }
+
+    private func stopLoading() {
+        self.view.isUserInteractionEnabled = true
+        self.spinner.stopAnimating()
     }
 
     override func viewDidLoad() {
@@ -29,10 +40,14 @@ class MoodBoardViewController: UICollectionViewController, MoodBoardViewProtocol
         self.interactor = MoodBoardInteractor()
         self.interactor?.presenter = MoodBoardPresenter()
         self.interactor?.presenter?.view = self
+
+        self.spinner.hidesWhenStopped = true
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.spinner)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.startLoading()
         self.interactor?.searchWithTerms(self.title ?? "")
     }
 
@@ -91,7 +106,9 @@ extension MoodBoardViewController {
                 return data.dimensions[indexPath.section - 1][indexPath.item]
             }
         }()
-        self.interactor?.searchWithImageId(item.imageId)
+
+        self.startLoading()
+        self.interactor?.searchWithTags(item.tags)
     }
 
 }
