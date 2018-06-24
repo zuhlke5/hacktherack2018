@@ -38,6 +38,10 @@ struct MoodBoardData: Codable {
 
         var imageURL: String
 
+        var width: Int
+
+        var height: Int
+
         var tags: [String]
 
     }

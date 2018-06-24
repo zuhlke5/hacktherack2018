@@ -32,24 +32,35 @@ class MoodBoardInteractor: MoodBoardInteractorProtocol {
 extension Array where Element == SearchedImage {
 
     func makeMoodBoardData(with tags: [String]) -> MoodBoardData? {
-        var sorted = self.sorted(by: { $0.relevance(with: tags) < $1.relevance(with: tags) })
+//        var sorted = self.sorted(by: { $0.relevance(with: tags) < $1.relevance(with: tags) })
+//
+//        guard let primaryImage = sorted.first?.makeMoodBoardImageItem() else {
+//            return nil
+//        }
+//
+//        let dimensions: [String: [MoodBoardData.ImageItem]] = sorted[1 ..< sorted.count].reduce(into: [:]) { result, image in
+//            guard let tag = image.mostRelevanceTag else {
+//                return
+//            }
+//            result[tag] = (result[tag] ?? []) + [image.makeMoodBoardImageItem()]
+//        }
+//
+//        let dimensionList = dimensions.map { $0 }.sorted { $0.key < $1.key }.map { $0.value }
+//
+//        let data = MoodBoardData(
+//            primaryImage: primaryImage,
+//            dimensions: dimensionList
+//        )
+//        return data
 
-        guard let primaryImage = sorted.first?.makeMoodBoardImageItem() else {
+        guard let primaryImage = self.first?.makeMoodBoardImageItem() else {
             return nil
         }
 
-        let dimensions: [String: [MoodBoardData.ImageItem]] = sorted[1 ..< sorted.count].reduce(into: [:]) { result, image in
-            guard let tag = image.mostRelevanceTag else {
-                return
-            }
-            result[tag] = (result[tag] ?? []) + [image.makeMoodBoardImageItem()]
-        }
-
-        let dimensionList = dimensions.map { $0 }.sorted { $0.key < $1.key }.map { $0.value }
-
+        let dimensions: [MoodBoardData.ImageItem] = self[1..<self.count].map { $0.makeMoodBoardImageItem() }
         let data = MoodBoardData(
             primaryImage: primaryImage,
-            dimensions: dimensionList
+            dimensions: [dimensions]
         )
         return data
     }
@@ -71,7 +82,13 @@ extension SearchedImage {
     }
 
     func makeMoodBoardImageItem() -> MoodBoardData.ImageItem {
-        return MoodBoardData.ImageItem(imageId: self.id, imageURL: self.thumbnailUri, tags: self.predictions.map { $0.tagName })
+        return MoodBoardData.ImageItem(
+            imageId: self.id,
+            imageURL: self.thumbnailUri,
+            width: self.width,
+            height: self.height,
+            tags: self.predictions.map { $0.tagName }
+        )
     }
 
 }

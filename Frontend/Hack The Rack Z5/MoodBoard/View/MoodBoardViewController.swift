@@ -1,4 +1,5 @@
 import UIKit
+import CHTCollectionViewWaterfallLayout
 
 class MoodBoardViewController: UICollectionViewController, MoodBoardViewProtocol {
 
@@ -24,6 +25,15 @@ class MoodBoardViewController: UICollectionViewController, MoodBoardViewProtocol
     }
 
     private let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+
+    @IBOutlet private var waterfallLayout: CHTCollectionViewWaterfallLayout? {
+        willSet {
+            newValue?.columnCount = 3
+            newValue?.minimumColumnSpacing = 16
+            newValue?.minimumInteritemSpacing = 16
+            newValue?.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        }
+    }
 
     private func startLoading() {
         self.view.isUserInteractionEnabled = false
@@ -109,6 +119,32 @@ extension MoodBoardViewController {
 
         self.startLoading()
         self.interactor?.searchWithTags(item.tags)
+    }
+
+    func image(at indexPath: IndexPath) -> MoodBoardData.ImageItem? {
+        guard let data = self.data else {
+            return nil
+        }
+        if indexPath.section == 0 {
+            return data.primaryImage
+        } else {
+            return data.dimensions[indexPath.section - 1][indexPath.item]
+        }
+    }
+
+}
+
+extension MoodBoardViewController: CHTCollectionViewDelegateWaterfallLayout {
+
+    func collectionView(
+        _ collectionView: UICollectionView!,
+        layout collectionViewLayout: UICollectionViewLayout!,
+        sizeForItemAt indexPath: IndexPath!
+        ) -> CGSize {
+        guard let image = self.image(at: indexPath) else {
+            return CGSize(width: 100, height: 100)
+        }
+        return CGSize(width: image.width, height: image.height)
     }
 
 }

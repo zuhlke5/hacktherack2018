@@ -41,7 +41,7 @@ class MoodBoardImageCell: UICollectionViewCell {
 
         super.layoutSubviews()
 
-        self.imageView.layer.cornerRadius = self.frame.width / 2.0
+        self.imageView.layer.cornerRadius = 16.0
         self.imageView.layer.borderColor = UIColor.lightGray.cgColor
         self.imageView.layer.borderWidth = 1.0
     }
