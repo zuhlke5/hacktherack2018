@@ -16,10 +16,29 @@
 		9F51FD7B20DDFBE10088919C /* MoodBoardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F51FD7A20DDFBE10088919C /* MoodBoardInteractor.swift */; };
 		9F51FD7D20DDFBF70088919C /* MoodBoardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F51FD7C20DDFBF70088919C /* MoodBoardPresenter.swift */; };
 		9F51FD8020DDFC290088919C /* MoodBoardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F51FD7F20DDFC290088919C /* MoodBoardProtocols.swift */; };
+		9FD7B27420DF59E7001F39B9 /* CHTCollectionViewWaterfallLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7B27120DF59D1001F39B9 /* CHTCollectionViewWaterfallLayout.framework */; };
+		9FD7B27520DF59E7001F39B9 /* CHTCollectionViewWaterfallLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7B27120DF59D1001F39B9 /* CHTCollectionViewWaterfallLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9FD7B27620DF59E7001F39B9 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7B27020DF59D1001F39B9 /* Kingfisher.framework */; };
+		9FD7B27720DF59E7001F39B9 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FD7B27020DF59D1001F39B9 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FE97F8420DEC8B9009B2B9E /* MoodBoardTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE97F8320DEC8B9009B2B9E /* MoodBoardTextCell.swift */; };
 		9FE97F8F20DEC966009B2B9E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE97F8E20DEC966009B2B9E /* SearchViewController.swift */; };
 		9FE97F9120DEC977009B2B9E /* MoodBoardImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE97F9020DEC977009B2B9E /* MoodBoardImageCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9FD7B27820DF59E7001F39B9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9FD7B27720DF59E7001F39B9 /* Kingfisher.framework in Embed Frameworks */,
+				9FD7B27520DF59E7001F39B9 /* CHTCollectionViewWaterfallLayout.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9F51FD5920DDE83A0088919C /* Hack The Rack Z5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hack The Rack Z5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,6 +52,8 @@
 		9F51FD7A20DDFBE10088919C /* MoodBoardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardInteractor.swift; sourceTree = "<group>"; };
 		9F51FD7C20DDFBF70088919C /* MoodBoardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardPresenter.swift; sourceTree = "<group>"; };
 		9F51FD7F20DDFC290088919C /* MoodBoardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardProtocols.swift; sourceTree = "<group>"; };
+		9FD7B27020DF59D1001F39B9 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = SOURCE_ROOT; };
+		9FD7B27120DF59D1001F39B9 /* CHTCollectionViewWaterfallLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CHTCollectionViewWaterfallLayout.framework; path = Carthage/Build/iOS/CHTCollectionViewWaterfallLayout.framework; sourceTree = SOURCE_ROOT; };
 		9FE97F8320DEC8B9009B2B9E /* MoodBoardTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardTextCell.swift; sourceTree = "<group>"; };
 		9FE97F8E20DEC966009B2B9E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9FE97F9020DEC977009B2B9E /* MoodBoardImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodBoardImageCell.swift; sourceTree = "<group>"; };
@@ -43,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FD7B27620DF59E7001F39B9 /* Kingfisher.framework in Frameworks */,
+				9FD7B27420DF59E7001F39B9 /* CHTCollectionViewWaterfallLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +75,7 @@
 		9F51FD5020DDE83A0088919C = {
 			isa = PBXGroup;
 			children = (
+				9FD7B26F20DF59AD001F39B9 /* Frameworks */,
 				9F51FD5B20DDE83A0088919C /* Hack The Rack Z5 */,
 				9F51FD5A20DDE83A0088919C /* Products */,
 			);
@@ -101,6 +125,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9FD7B26F20DF59AD001F39B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FD7B27120DF59D1001F39B9 /* CHTCollectionViewWaterfallLayout.framework */,
+				9FD7B27020DF59D1001F39B9 /* Kingfisher.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		9FE97F8C20DEC966009B2B9E /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +160,7 @@
 				9F51FD5520DDE83A0088919C /* Sources */,
 				9F51FD5620DDE83A0088919C /* Frameworks */,
 				9F51FD5720DDE83A0088919C /* Resources */,
+				9FD7B27820DF59E7001F39B9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,6 +375,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Hack The Rack Z5/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -358,6 +396,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Hack The Rack Z5/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

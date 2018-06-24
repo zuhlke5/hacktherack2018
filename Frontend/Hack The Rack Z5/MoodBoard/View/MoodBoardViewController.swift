@@ -63,9 +63,16 @@ extension MoodBoardViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Text", for: indexPath)
-        if let cell = cell as? MoodBoardTextCell {
-            cell.text = "\(indexPath.section) - \(indexPath.row)"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Image", for: indexPath)
+        if let cell = cell as? MoodBoardImageCell, let data = data {
+            let item: MoodBoardData.ImageItem = {
+                if indexPath.section == 0 {
+                    return data.primaryImage
+                } else {
+                    return data.dimensions[indexPath.section - 1][indexPath.item]
+                }
+            }()
+            cell.imageURL = item.imageURL
         }
         return cell
     }
